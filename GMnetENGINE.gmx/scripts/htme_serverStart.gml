@@ -52,7 +52,10 @@ if (self.use_udphp) {
 self.playermap = ds_map_create();
 self.kickmap = ds_map_create();
 self.playerrooms = ds_map_create();
-self.playerhash = htme_hash()+"-1";
+self.playerindex = 0;
+self.playerhash = string(self.playerindex)+"-1";
+self.playerindex++;
+
 //IP:Port for local player is always 0:0
 ds_map_add(self.playermap,"0:0",self.playerhash);
 ds_map_add(self.playerrooms,"0:0",room);

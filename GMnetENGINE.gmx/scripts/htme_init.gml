@@ -192,6 +192,10 @@ self.udphp_playerlist = -1;
 self.playermap = -1;
 //Kickmap - When clients will be forced to be kicked <ip:port> -> <time till kicked in steps> [Only server!]
 self.kickmap = -1;
+//Invidual Player counter (always increasing). Will be used as unique player id (playerhash). 
+//It is unique and never given twice. The player number however, that is appended to all playerhashes, 
+//is not (see htme_getPlayerNumber)
+self.playerindex = 0;
 //Local playerhash.
 self.playerhash = "";
 //Timeout counter for client

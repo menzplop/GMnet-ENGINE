@@ -66,7 +66,8 @@ htme_debugger("htme_syncSingleVarGroup",htme_debug.DEBUG,"Syncing a var group...
 /** PACKET INSTANCE_VARGROUP
  * s8 -> id
  * string -> instance hash
- * string -> player hash
+ * u16 -> playerhash (unique number part)
+ * u16 -> playerhash (playernumber part)
  * u16 -> room
  * string -> groupname
  * u16 -> object
@@ -87,24 +88,27 @@ cmd_list[| 1] = htme_packet.INSTANCE_VARGROUP;
 //Write instance hash
 cmd_list[| 2] = buffer_string;
 cmd_list[| 3] = inst_hash;
-//Write player
-cmd_list[| 4] = buffer_string;
-cmd_list[| 5] = inst_player;
+//Write player - UNIQUE Part
+cmd_list[| 4] = buffer_u16;
+cmd_list[| 5] = real(htme_string_explode(inst_player,"-",0));
+//Write player - Current number part
+cmd_list[| 6] = buffer_u16;
+cmd_list[| 7] = real(htme_string_explode(inst_player,"-",1));
 //Write groupname
-cmd_list[| 6] = buffer_string;
-cmd_list[| 7] = group[? "name"];
+cmd_list[| 8] = buffer_string;
+cmd_list[| 9] = group[? "name"];
 //Write object id
-cmd_list[| 8] = buffer_u16;
-cmd_list[| 9] = inst_object;
+cmd_list[| 10] = buffer_u16;
+cmd_list[| 11] = inst_object;
 //Write stayAlive
-cmd_list[| 10] = buffer_bool;
-cmd_list[| 11] = inst_stayAlive;
+cmd_list[| 12] = buffer_bool;
+cmd_list[| 13] = inst_stayAlive;
 //Write tolerance
-cmd_list[| 12] = buffer_f32;
-cmd_list[| 13] = group[? "tolerance"];
+cmd_list[| 14] = buffer_f32;
+cmd_list[| 15] = group[? "tolerance"];
 //Write datatype
-cmd_list[| 14] = buffer_u16; 
-cmd_list[| 15] = group[? "datatype"];
+cmd_list[| 16] = buffer_u16; 
+cmd_list[| 17] = group[? "datatype"];
 
 //Server: Sync in clientmode if local instance
 if (self.isServer && inst_player != self.playerhash) {

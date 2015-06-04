@@ -46,7 +46,8 @@ if (!script_execute(self.serverEventHandlerConnect,ev_map)) {
 }
 ds_map_destroy(ev_map);
 var player = ip+":"+string(port);
-var playerhash = htme_hash();
+var playerhash = string(self.playerindex);
+self.playerindex++;
 //Now we extend the playerhash with the player number.
 var players = global.htme_object.playerlist;
 var checker = ds_map_create();

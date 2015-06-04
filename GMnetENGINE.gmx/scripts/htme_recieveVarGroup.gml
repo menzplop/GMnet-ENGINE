@@ -24,7 +24,9 @@ var in_port = ds_map_find_value(async_load, "port");
 
 
 var instancehash = buffer_read(in_buff,buffer_string);
-var playerhash = buffer_read(in_buff,buffer_string);
+var playerhashP1 = buffer_read(in_buff,buffer_u16);
+var playerhashP2 = buffer_read(in_buff,buffer_u16);
+var playerhash = string(playerhashP1)+"-"+string(playerhashP2);
 var groupname = buffer_read(in_buff,buffer_string);
 var object_id = buffer_read(in_buff,buffer_u16);
 var inst_stayAlive = buffer_read(in_buff,buffer_bool);
