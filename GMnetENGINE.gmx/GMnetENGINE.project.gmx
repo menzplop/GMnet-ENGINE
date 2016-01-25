@@ -268,6 +268,9 @@
     <script>scripts\show_priority_destroy.gml</script>
     <script>scripts\show_queue_destroy.gml</script>
     <script>scripts\show_debug_info_hmte_object_step.gml</script>
+    <script>scripts\htmerpc_callback.gml</script>
+    <script>scripts\htmerpc_recieve.gml</script>
+    <script>scripts\htmerpc_send.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="htme">
@@ -296,12 +299,15 @@
       <object>objects\obj_udphphtme_lobby</object>
     </objects>
     <object>objects\obj_dual_instance</object>
+    <object>objects\obj_htme_rpc</object>
+    <object>objects\obj_gotoRoom</object>
   </objects>
   <rooms name="rooms">
     <rooms name="htme_demo">
       <room>rooms\htme_rom_menu</room>
       <room>rooms\htme_rom_connecting</room>
       <room>rooms\htme_rom_demo</room>
+      <room>rooms\htme_rom_demo_start</room>
       <room>rooms\htme_rom_demo2</room>
       <room>rooms\htme_lanlobby</room>
     </rooms>
