@@ -45,7 +45,7 @@ for(var i=0; i<ds_map_size(self.globalInstances); i+=1) {
             htme_serverRemoveBackup(key);        
         with inst_id {instance_destroy();}
     }
-    key = ds_map_find_next(global.htme_object.globalInstances, key);
+    key = ds_map_find_next(self.globalInstances, key);
 }
 //CLEAN ALL DATA
 ds_map_clear(self.localInstances);
@@ -79,4 +79,16 @@ ds_map_destroy(self.sPcountIN);
 show_map_destroy(self.sPcountIN,"htme_shutdown",78);
 self.sPcountIN = ds_map_create();
 show_map(self.sPcountIN,"htme_shutdown",80);
-if (ds_exists(self.chatQueues,ds_type_map)) {ds_map_destroy(self.chatQueues);show_map_destroy(self.chatQueues,"htme_shutdown",82);}
+if (ds_exists(self.chatQueues,ds_type_map)) {
+    key = ds_map_find_first(self.chatQueues);
+    for(var i=0; i<ds_map_size(self.chatQueues); i+=1) {
+        var chat_queue = ds_map_find_value(self.chatQueues,key);
+        if (ds_exists(chat_queue,ds_type_queue)) {
+            ds_queue_destroy(chat_queue);
+            show_queue_destroy(chat_queue,"htme_shutdown",87);
+        }
+        key = ds_map_find_next(self.chatQueues, key);
+    }    
+    ds_map_destroy(self.chatQueues);
+    show_map_destroy(self.chatQueues,"htme_shutdown",82);
+}
