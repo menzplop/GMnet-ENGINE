@@ -255,6 +255,12 @@
     <scripts name="htme_demo">
       <script>scripts\totro.gml</script>
     </scripts>
+    <script>scripts\check_bug_here.gml</script>
+    <script>scripts\show_list.gml</script>
+    <script>scripts\show_list_destroy.gml</script>
+    <script>scripts\show_map.gml</script>
+    <script>scripts\Show_map_cont.gml</script>
+    <script>scripts\show_map_destroy.gml</script>
   </scripts>
   <objects name="objects">
     <objects name="htme">
