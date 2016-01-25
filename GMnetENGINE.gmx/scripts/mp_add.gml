@@ -42,8 +42,10 @@ if (global.htme_object.tmp_creatingNetworkInstanceNoGroups) {
 }
 
 var group = ds_map_create();
+show_map(group,"mp_add",44);
 /** PROCESS VARIABLES **/
 group[? "variables"] = ds_list_create();
+show_list(group[? "variables"],"mp_add",47);
 var reached_end = false, last="", current, k=0;
 while (!reached_end) {
     current = htme_string_explode(variables,",",k);

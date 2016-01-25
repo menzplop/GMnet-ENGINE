@@ -26,13 +26,16 @@ var phash = ds_map_find_value(self.playermap,argument0);
 
 //Custom event handler
 var ev_map = ds_map_create();
+show_map(ev_map,"htme_serverEventPlayerDisconnected",28);
 ev_map[? "ip"] = pip
 ev_map[? "port"] = pport;
 ev_map[? "hash"] = phash;
 script_execute(self.serverEventHandlerDisconnect,ev_map);
 ds_map_destroy(ev_map);
+show_map_destroy(ev_map,"htme_serverEventPlayerDisconnected",34);
 
 var mapToUse=ds_map_create();
+show_map(mapToUse,"htme_serverEventPlayerDisconnected",37);
 ds_map_copy(mapToUse,self.globalInstances);
 
 var key= ds_map_find_first(mapToUse);
@@ -76,3 +79,4 @@ ds_list_delete(self.playerlist,ds_list_find_index(self.playerlist,phash));
 
 // Clean
 ds_map_destroy(mapToUse);
+show_map_destroy(mapToUse,"htme_serverEventPlayerDisconnected",81);

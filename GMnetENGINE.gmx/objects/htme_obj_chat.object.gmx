@@ -59,6 +59,7 @@ mp_syncAsChatHandler("Chat");
 
 //Setup variables
 self.output = ds_list_create();
+show_list(self.output,"htme_obj_chat_CREATE",9);
 </string>
           </argument>
         </arguments>
@@ -82,7 +83,7 @@ self.output = ds_list_create();
           <argument>
             <kind>1</kind>
             <string>/// Clean
-if ds_exists(self.output,ds_type_list) ds_list_destroy(self.output);
+if ds_exists(self.output,ds_type_list) {ds_list_destroy(self.output); show_list_destroy(self.output,"htme_obj_chat_DESTROY",1);}
 </string>
           </argument>
         </arguments>

@@ -32,11 +32,15 @@ if (isLocal) {
     self.htme_mp_id = htme_hash();
     self.htme_mp_object = self.object_index;
     self.htme_mp_groups = ds_map_create();
+    show_map(self.htme_mp_groups,"mp_sync",34);
     self.htme_mp_vars = ds_map_create();
+    show_map(self.htme_mp_vars,"mp_sync",36);
     //Temporary variable maps for comparing against when syncing and recieving
     //with tolerance and/or IMPORTANTPLUS
     self.htme_mp_vars_recv = ds_map_create(); // Dummy for the cleaning scripts   
+    show_map(self.htme_mp_vars_recv,"mp_sync",40);
     self.htme_mp_vars_sync = ds_map_create();
+    show_map(self.htme_mp_vars_sync,"mp_sync",42);
     
     self.htme_mp_stayAlive = false;
     self.htme_mp_player = global.htme_object.playerhash;
@@ -54,11 +58,15 @@ if (isLocal) {
     // htme_serverRecieveVarGroup we check it
     // If allready in backup we destroy this new map and reference to the backup
     self.htme_mp_groups = ds_map_create();
+    show_map(self.htme_mp_groups,"mp_sync",60);
     self.htme_mp_vars = ds_map_create();
+    show_map(self.htme_mp_vars,"mp_sync",62);
     //Temporary variable maps for comparing against when syncing and recieving
     //with tolerance and/or IMPORTANTPLUS
     self.htme_mp_vars_recv = ds_map_create();
+    show_map(self.htme_mp_vars_recv,"mp_sync",66);
     self.htme_mp_vars_sync = ds_map_create();
+    show_map(self.htme_mp_vars_sync,"mp_sync",68);
     
     self.htme_mp_stayAlive = false;
     self.htme_mp_player = ""; //Must be overwritten!

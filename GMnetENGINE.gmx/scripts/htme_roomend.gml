@@ -34,6 +34,7 @@ var new_insthash = undefined;
 htme_debugger("htme_roomend",htme_debug.DEBUG,"ROOMEND triggered!");
 
 var mapToUse=ds_map_create();
+show_map(mapToUse,"htme_roomend",36);
 ds_map_copy(mapToUse,self.globalInstances);
 
 var insthash=ds_map_find_first(mapToUse);
@@ -77,3 +78,4 @@ htme_forceSyncLocalInstances(self.playerhash);
 
 // Clean
 ds_map_destroy(mapToUse);
+show_map_destroy(mapToUse,"htme_roomend",80);

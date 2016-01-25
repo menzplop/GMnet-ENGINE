@@ -63,10 +63,11 @@ global.udphp_server_counter = 0;
 //+Timeouts for connections with incoming requests
 //global.udphp_server_incoming_requests<ip:port,timeout>
 global.udphp_server_incoming_requests = ds_map_create();
+show_map(global.udphp_server_incoming_requests,"udphp_createServer",65);
 //Similiar to the ones above, however used to send a welcome-packet
 //if we are connected with the client (after the connection is done!)
 global.udphp_server_incoming_requests2 = ds_map_create();
-
+show_map(global.udphp_server_incoming_requests2,"udphp_createServer",69);
 //Reset the 8 data buffers used for lobby and server identification
 //These can be set with udphp_serverSetData(n,string)
 //and when connected can be read with udphp_readData()

@@ -23,6 +23,7 @@ htme_debugger("htme_serverRecreateInstancesLocal",htme_debug.DEBUG,"Recreating l
 
 //var mapToUse = self.globalInstances;
 var mapToUse=ds_map_create();
+show_map(mapToUse,"htme_serverRecreateInstancesLocal",25);
 ds_map_copy(mapToUse,self.globalInstances);
 
 var key= ds_map_find_first(mapToUse);
@@ -81,3 +82,4 @@ for(var i=0; i<ds_map_size(mapToUse); i+=1) {
 
 // Clean
 ds_map_destroy(mapToUse);
+show_map_destroy(mapToUse,"htme_serverRecreateInstancesLocal",84);

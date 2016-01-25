@@ -27,6 +27,7 @@ htme_debugger("htme_serverEventPlayerConnected",htme_debug.DEBUG,"Handling conne
 
 //EVENT HANDLER - PLAYER CONNECTED
 var ev_map = ds_map_create();
+show_map(ev_map,"htme_serverEventPlayerConnected",29);
 ev_map[? "ip"] = ip;
 ev_map[? "port"] = port;
 if (!script_execute(self.serverEventHandlerConnect,ev_map)) {
@@ -36,6 +37,7 @@ if (!script_execute(self.serverEventHandlerConnect,ev_map)) {
     buffer_write(self.buffer, buffer_s8, htme_packet.SERVER_KICKREQ)
     network_send_udp( self.socketOrServer, ip, port, self.buffer, buffer_tell(self.buffer) );
     ds_map_destroy(ev_map);
+    show_map_destroy(ev_map,"htme_serverEventPlayerConnected",39);
     if (self.use_udphp) {
         //Remove from udphp player list
         var pos = ds_list_find_index(self.udphp_playerlist,ip+":"+string(port));
@@ -46,12 +48,14 @@ if (!script_execute(self.serverEventHandlerConnect,ev_map)) {
 }
 else {
     ds_map_destroy(ev_map);
+    show_map_destroy(ev_map,"htme_serverEventPlayerConnected",50);
 }
 var player = ip+":"+string(port);
 var playerhash = htme_hash();
 //Now we extend the playerhash with the player number.
 var players = global.htme_object.playerlist;
 var checker = ds_map_create();
+show_map(checker,"htme_serverEventPlayerConnected",57);
 for (var i = 0; i<ds_list_size(players); i++) {
     var num = htme_string_explode(players[| i],"-",1);
     ds_map_add(checker,real(num),1);
@@ -66,6 +70,7 @@ while (!found) {
     i++;
 }
 ds_map_destroy(checker);
+show_map_destroy(checker,"htme_serverEventPlayerConnected",72);
 //END OF Now we extend the playerhash with the player number.
 
 htme_debugger("htme_serverEventPlayerConnected",htme_debug.INFO,"CONNECTED TO CLIENT "+player+" . Adding to the playermap with hash "+playerhash);

@@ -25,6 +25,7 @@ var target  = argument1;
 var target_outmap = ds_map_find_value(self.sPcountOUT,target);
 if (is_undefined(target_outmap)) {
     target_outmap = ds_map_create();
+    show_map(target_outmap,"htme_initSignedPacket",27);
     target_outmap[? "n"] = -1;
     ds_map_add_map(self.sPcountOUT,target,target_outmap);
 }

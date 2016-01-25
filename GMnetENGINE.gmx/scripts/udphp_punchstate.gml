@@ -82,6 +82,7 @@ switch (client.punch_stage)
                 client.punch_stage_predict_minport=minport;
                 // Put values in a list
                 var mytemplist=ds_list_create();
+                show_list(mytemplist,"udphp_punchstate",84);
                 for (var i=0; i<maxport-minport; i+=1)
                 {
                     mytemplist[| i]=minport+i;
@@ -98,6 +99,7 @@ switch (client.punch_stage)
                 }
                 // remove list and use the array instead to prevent memory leaks
                 ds_list_destroy(mytemplist);
+                show_list_destroy(mytemplist,"udphp_punchstate",101);
                 // Set ports to try every step
                 // if more than 160 ports the messages will not be sent. This was tested. (Maybe a limit in GM or OS or the NAT)
                 client.punch_stage_burst=160;

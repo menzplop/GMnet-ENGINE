@@ -178,8 +178,10 @@ self.serverTimeoutSend = -1;
 self.serverTimeoutRecv = -1;
 //List of locally controlled instances <hash> -> <instance_id> 
 self.localInstances = ds_map_create();
+show_map(self.localInstances,"htme_init",180);
 //List of all controlled instances <hash> -> <instance_id> 
 self.globalInstances = ds_map_create();
+show_map(self.globalInstances,"htme_init",183);
 //
 self.tmp_creatingNetworkInstance = false;
 self.tmp_creatingNetworkInstanceNoGroups = false;
@@ -218,6 +220,7 @@ self.dbgcntx = "";
 self.dbgcntx2 = "";
 self.port = -1;
 self.lanlobby = ds_list_create();
+show_list(self.lanlobby,"htme_init",222);
 self.lanlobbysearch = false;
 self.lanlobbyfilter = "";
 self.lanlobbyport = 0;
@@ -235,6 +238,7 @@ self.chatQueues = -1;
 */                                              
        
 self.sPcountOUT = ds_map_create();
+show_map(self.sPcountOUT,"htme_init",240);
 //Signed Packet Count Map - Recieving
 /*STRUCTURE:
     self.sPcountIN -> 
@@ -244,3 +248,4 @@ self.sPcountOUT = ds_map_create();
                                                                    [i] -> buffer
 */       
 self.sPcountIN = ds_map_create();
+show_map(self.sPcountIN,"htme_init",250);

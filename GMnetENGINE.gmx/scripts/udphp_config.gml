@@ -122,6 +122,7 @@ global.udphp_tmp_data6 = "";
 global.udphp_tmp_data7 = "";
 global.udphp_tmp_data8 = "";
 global.udphp_clients = ds_map_create();
+show_map(global.udphp_clients,"udphp_config",124);
 global.udphp_version = "1.2.4";
 
 global.udphp_downloadlist_refreshing = false;

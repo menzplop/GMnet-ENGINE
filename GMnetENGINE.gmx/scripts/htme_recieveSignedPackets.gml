@@ -27,8 +27,10 @@ var in_port = ds_map_find_value(async_load, "port");
 
 buffer_seek(in_buff, buffer_seek_start, 0);
 //Create playermap if it doesn't exist, fix for YYC compatibility
-if not ds_exists(self.playermap,ds_type_map)
+if not ds_exists(self.playermap,ds_type_map) {
     self.playermap = ds_map_create()
+    show_map(self.playermap,"htme_recieveSignedPackets",31);
+}
 
 //Check if the sender is valid
 if ((self.isServer && !is_undefined(ds_map_find_value(self.playermap,in_ip+":"+string(in_port)))) ||
@@ -44,6 +46,7 @@ if ((self.isServer && !is_undefined(ds_map_find_value(self.playermap,in_ip+":"+s
             var sender_inmap = ds_map_find_value(self.sPcountIN,sender);
             if (is_undefined(sender_inmap)) {
                 sender_inmap = ds_map_create();
+                show_map(sender_inmap,"htme_recieveSignedPackets",48);
                 sender_inmap[? "n"] = 0;
                 ds_map_add_map(self.sPcountIN,sender,sender_inmap);
             }
@@ -139,6 +142,7 @@ if ((self.isServer && !is_undefined(ds_map_find_value(self.playermap,in_ip+":"+s
                     var target_outmap = ds_map_find_value(self.sPcountOUT,target);
                     if (is_undefined(target_outmap)) {
                         target_outmap = ds_map_create();
+                        show_map(target_outmap,"htme_recieveSignedPackets",144);
                         target_outmap[? "n"] = -1;
                         ds_map_add_map(self.sPcountOUT,target,target_outmap);
                     }
@@ -163,6 +167,7 @@ if ((self.isServer && !is_undefined(ds_map_find_value(self.playermap,in_ip+":"+s
                     var sender_inmap = ds_map_find_value(self.sPcountIN,sender);
                     if (is_undefined(sender_inmap)) {
                         sender_inmap = ds_map_create();
+                        show_map(sender_inmap,"htme_recieveSignedPackets",169);
                         sender_inmap[? "n"] = 0;
                         ds_map_add_map(self.sPcountIN,sender,sender_inmap);
                     }

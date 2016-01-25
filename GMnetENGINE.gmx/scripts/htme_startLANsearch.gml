@@ -45,7 +45,9 @@ if (argument_count > 1) {
 
 with (global.htme_object) {
     ds_list_destroy(self.lanlobby);
+    show_list_destroy(self.lanlobby,"htme_startLANsearch",47);
     self.lanlobby = ds_list_create();
+    show_list(self.lanlobby,"htme_startLANsearch",49);
     self.lanlobbyport = port;
     self.lanlobbysearch = true;
     self.lanlobbyfilter = gamefilter;

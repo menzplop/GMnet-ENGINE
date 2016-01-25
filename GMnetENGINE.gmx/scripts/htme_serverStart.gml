@@ -47,6 +47,7 @@ if(self.socketOrServer<0) {
 if (self.use_udphp) {
     htme_debugger("htme_serverStart",htme_debug.DEBUG,"LOADING GMnet PUNCH");
     self.udphp_playerlist = ds_list_create();
+    show_list(self.udphp_playerlist,"htme_serverStart",49);
     if(!script_execute(asset_get_index("udphp_createServer"),self.socketOrServer,self.buffer,self.udphp_playerlist)) {
         //Error while starting udphp
         htme_debugger("htme_serverStart",htme_debug.ERROR,"Could not start GMnet PUNCH server instance! Check udphp log, increase log level if neccesary.");
@@ -55,38 +56,51 @@ if (self.use_udphp) {
     }
     script_execute(asset_get_index("udphp_serverSetData"),1,self.gamename);
 }
-
 //Create playermap, generate hash for local player and add local player
 self.playermap = ds_map_create();
+show_map(self.playermap,"htme_serverStart",60);
 self.kickmap = ds_map_create();
+show_map(self.kickmap,"htme_serverStart",62);
 self.playerrooms = ds_map_create();
+show_map(self.playerrooms,"htme_serverStart",64);
 self.playerhash = htme_hash()+"-1";
 //IP:Port for local player is always 0:0
 ds_map_add(self.playermap,"0:0",self.playerhash);
 ds_map_add(self.playerrooms,"0:0",room);
 //More maps required for the engine
 self.serverTimeoutSend = ds_map_create();
+show_map(self.serverTimeoutSend,"htme_serverStart",71);
 self.serverTimeoutRecv = ds_map_create();
+show_map(self.serverTimeoutRecv,"htme_serverStart",74);
 
 //Signed packet map
 self.signedPackets = ds_list_create();
+show_list(self.signedPackets,"htme_serverStart",77);
 self.signedPacketsCategories = ds_map_create();
+show_map(self.signedPacketsCategories,"htme_serverStart",79);
 
 //Backup data for instances
 self.serverBackup = ds_map_create();
+show_map(self.serverBackup,"htme_serverStart",83);
 
 //Playerlist for htme_iteratePlayers
 self.playerlist = ds_list_create();
+show_list(self.playerlist,"htme_serverStart",87);
 ds_list_add(self.playerlist,self.playerhash);
 
 self.grouplist = ds_list_create();
+show_list(self.grouplist,"htme_serverStart",91);
 self.grouplist_local = ds_list_create();
+show_list(self.grouplist_local,"htme_serverStart",93);
 
 //Global sync map
 self.globalsync = ds_map_create();
+show_map(self.globalsync,"htme_serverStart",97);
 self.globalsync_datatypes = ds_map_create();
+show_map(self.globalsync_datatypes,"htme_serverStart",99);
 
 self.chatQueues = ds_map_create();
+show_map(self.chatQueues,"htme_serverStart",102);
 
 //Configure state variables
 self.started = true;

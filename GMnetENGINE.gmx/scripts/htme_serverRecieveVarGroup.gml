@@ -38,6 +38,7 @@ var backupEntry = ds_map_find_value(self.serverBackup,instancehash);
 if (is_undefined(backupEntry)) {
    //Create backup entry
    var backupEntry = ds_map_create();
+   show_map(backupEntry,"htme_serverRecieveVarGroup",40);
    backupEntry[? "groups"] = (instance).htme_mp_groups;
    // This will create a new "groups" but the engine want a link to the instances "groups"
    //backupEntry[? "groups"] = ds_map_create();
@@ -46,8 +47,10 @@ if (is_undefined(backupEntry)) {
    backupEntry[? "player"] = playerhash;
    backupEntry[? "stayAlive"] = inst_stayAlive;
    var backupVars = ds_map_create();
+   show_map(backupVars,"htme_serverRecieveVarGroup",49);
    backupEntry[? "backupVars"] = backupVars;
    backupEntry[? "syncVars"] = ds_map_create();
+   show_map(backupEntry[? "syncVars"],"htme_serverRecieveVarGroup",52);
    ds_map_add(self.serverBackup,instancehash,backupEntry);
 } else {
     // Check if instance exists in same roome
@@ -58,6 +61,7 @@ if (is_undefined(backupEntry)) {
             // Server ran mp_sync and created some maps that is allready created in the backup
             // Remove the new maps and link to the old ones
             ds_map_destroy((instance).htme_mp_groups);
+            show_map_destroy((instance).htme_mp_groups,"htme_serverRecieveVarGroup",63);
             (instance).htme_mp_groups=backupEntry[? "groups"];
         }
     }

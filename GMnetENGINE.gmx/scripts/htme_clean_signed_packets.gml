@@ -33,6 +33,7 @@ if argument0!="" {
             }
             // Destroy map itself
             ds_map_destroy(target_outmap);
+            show_map_destroy(target_outmap,"htme_clean_signed_packets",35);
         }
     }
     // Delete outmap ref
@@ -59,6 +60,7 @@ if argument0!="" {
             }
             // Destroy map itself
             ds_map_destroy(target_inmap);
+            show_map_destroy(target_inmap,"htme_clean_signed_packets",62);
         }
     }
     // Delete inmap ref
@@ -80,6 +82,7 @@ if argument0!="" {
                 }
                 // Destroy map itself
                 ds_map_destroy(target_outmap);
+                show_map_destroy(target_outmap,"htme_clean_signed_packets",84);
             }
         }
         // Delete outmap ref
@@ -108,9 +111,11 @@ if argument0!="" {
                     }
                     // Destroy ds priority
                     ds_priority_destroy(target_ds_priority);
+                    show_map_destroy(target_ds_priority,"htme_clean_signed_packets",113);
                 }
                 // Destroy map itself
                 ds_map_destroy(target_inmap);
+                show_map_destroy(target_inmap,"htme_clean_signed_packets",117);
             }
         }
         // Delete inmap ref

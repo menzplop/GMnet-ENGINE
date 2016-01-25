@@ -39,6 +39,7 @@ with (global.htme_object) {
                     exit;
             }
             var map = ds_map_create();
+            show_map(map,"htme_networking_searchForBroadcasts",41);
             var serverlist = self.lanlobby;
             map[? "ip"] = in_ip;
             map[? "port"] = self.lanlobbyport;

@@ -55,20 +55,28 @@ if (self.use_udphp) {
 
 //Signed packet map
 self.signedPackets = ds_list_create();
+show_list(self.signedPackets,"htme_clientStart",57);
 self.signedPacketsCategories = ds_map_create();
+show_map(self.signedPacketsCategories,"htme_clientStart",59);
 
 //Playerlist for htme_iteratePlayers
 self.playerlist = ds_list_create();
+show_list(self.playerlist,"htme_clientStart",63);
 
 self.grouplist = ds_list_create();
+show_list(self.grouplist,"htme_clientStart",66);
 self.grouplist_local = ds_list_create();
+show_list(self.grouplist_local,"htme_clientStart",68);
 
 //Global sync map
 self.globalsync = ds_map_create();
+show_map(self.globalsync,"htme_clientStart",72);
 self.globalsync_datatypes = ds_map_create();
+show_map(self.globalsync_datatypes,"htme_clientStart",74);
 self.playerhash = "";
 
 self.chatQueues = ds_map_create();
+show_map(self.chatQueues,"htme_clientStart",78);
 
 self.server = false;
 self.isConnected = false;
