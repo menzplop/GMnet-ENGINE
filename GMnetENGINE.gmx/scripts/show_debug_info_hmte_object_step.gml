@@ -15,7 +15,15 @@ if mouse_check_button_pressed(mb_left)
         if ds_exists(i,ds_type_map) then
         {
             //show_debug_message(json_encode(i));   
-            show_debug_message("Map: " + string(i));
+            // Check if async map that is still here
+            if is_undefined(ds_map_find_value(i,"buffer"))
+            {
+                show_debug_message("Map: " + string(i));
+            }
+            else
+            {
+                show_debug_message("Map: " + string(i) + " (async_load map - will be auto removed soon)");
+            }
             countmap+=1;     
         }
     };
