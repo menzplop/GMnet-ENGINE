@@ -58,6 +58,7 @@ if ((self.isServer && !is_undefined(ds_map_find_value(self.playermap,in_ip+":"+s
             var buffs = sender_inmap[? "buffs"];
             if (is_undefined(buffs)) {
                 buffs = ds_priority_create();
+                show_priority(buffs,"htme_recieveSignedPackets",60);
                 sender_inmap[? "buffs"] = buffs;
             }
                         

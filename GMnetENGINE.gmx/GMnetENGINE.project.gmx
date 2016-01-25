@@ -261,8 +261,12 @@
     <script>scripts\show_list.gml</script>
     <script>scripts\show_list_destroy.gml</script>
     <script>scripts\show_map.gml</script>
+    <script>scripts\show_priority.gml</script>
+    <script>scripts\show_queue.gml</script>
     <script>scripts\Show_map_cont.gml</script>
     <script>scripts\show_map_destroy.gml</script>
+    <script>scripts\show_priority_destroy.gml</script>
+    <script>scripts\show_queue_destroy.gml</script>
     <script>scripts\show_debug_info_hmte_object_step.gml</script>
   </scripts>
   <objects name="objects">

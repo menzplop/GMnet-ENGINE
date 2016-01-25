@@ -57,6 +57,7 @@ if argument0!="" {
                 }
                 // Destroy ds priority
                 ds_priority_destroy(target_ds_priority);
+                show_priority_destroy(target_ds_priority,"htme_clean_signed_packets",59);
             }
             // Destroy map itself
             ds_map_destroy(target_inmap);
@@ -111,7 +112,7 @@ if argument0!="" {
                     }
                     // Destroy ds priority
                     ds_priority_destroy(target_ds_priority);
-                    show_map_destroy(target_ds_priority,"htme_clean_signed_packets",113);
+                    show_priority_destroy(target_ds_priority,"htme_clean_signed_packets",114);
                 }
                 // Destroy map itself
                 ds_map_destroy(target_inmap);

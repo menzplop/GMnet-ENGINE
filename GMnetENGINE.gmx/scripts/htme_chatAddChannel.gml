@@ -25,6 +25,7 @@ var queue = ds_map_find_value(self.chatQueues, channel);
 if (is_undefined(queue)) {
     htme_debugger("htme_chatAddChannel",htme_debug.CHATDEBUG,"CHAT API ["+channel+"] - Added channel");
     queue = ds_queue_create();
+    show_queue(queue,"htme_chatAddChannel",27);
     ds_map_replace(self.chatQueues, channel, queue);
 }
 

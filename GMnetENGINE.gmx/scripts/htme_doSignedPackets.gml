@@ -162,6 +162,7 @@ if (self.dbgcntx != "") {
             
             str = str + "WE NEED NEXT: "+string(player[? "n"])+"##";
             var prio = ds_priority_create();
+            show_priority(prio,"htme_doSignedPackets",164);
             ds_priority_copy(prio,player[? "buffs"]);
             var priority = ds_priority_find_priority(prio,ds_priority_find_min(prio));
             var buff = ds_priority_delete_min(prio);
@@ -258,6 +259,7 @@ if (self.dbgcntx != "") {
                 buff = ds_priority_delete_min(prio);
             }
             ds_priority_destroy(prio);
+            show_priority_destroy(prio,"htme_doSignedPackets",261);
             
             draw_text(self.dbg_left+20,offs,str);
             offs = offs + string_height(str);
