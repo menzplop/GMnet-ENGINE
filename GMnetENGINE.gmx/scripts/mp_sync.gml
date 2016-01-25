@@ -27,7 +27,7 @@ for(var i=0; i<ds_map_size(global.htme_object.globalInstances); i+=1) {
     key = ds_map_find_next(global.htme_object.globalInstances, key);
 }
 if (global.htme_object.tmp_creatingNetworkInstance) isLocal = false;
-
+if isLocal show_debug_message("mp_sync on LOCAL") else show_debug_message("mp_sync on REMOTE")
 if (isLocal) {
     self.htme_mp_id = htme_hash();
     self.htme_mp_object = self.object_index;

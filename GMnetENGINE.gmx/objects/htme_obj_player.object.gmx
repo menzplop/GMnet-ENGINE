@@ -130,7 +130,7 @@ mp_add("playerName","name",buffer_string,60*room_speed);
 mp_setType("playerName",mp_type.SMART);
 mp_add("controls","pressed_jump,pressed_left,pressed_right",buffer_bool,1);
 
-
+if htme_isLocal() show_debug_message("mp_sync END on LOCAL") else show_debug_message("mp_sync END on REMOTE")
 /** 
  * By the way:
  * Our object player is persistent. That means it will travel through rooms without getting destroyed.
