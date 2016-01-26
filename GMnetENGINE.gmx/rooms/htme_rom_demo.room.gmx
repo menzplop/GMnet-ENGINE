@@ -52,6 +52,11 @@
   </views>
   <instances>
     <instance objName="obj_gotoRoom" x="304" y="240" name="inst_D898EB6C" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door_dummy" x="32" y="32" name="inst_0D7B2733" locked="0" code="" scaleX="0.384615391492844" scaleY="0.307692319154739" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door_dummy" x="128" y="32" name="inst_5D36A99D" locked="0" code="" scaleX="0.384615391492844" scaleY="0.307692319154739" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door_dummy" x="224" y="32" name="inst_B699FE63" locked="0" code="" scaleX="0.384615391492844" scaleY="0.307692319154739" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door_dummy" x="320" y="32" name="inst_AD45A2AC" locked="0" code="" scaleX="0.384615391492844" scaleY="0.307692319154739" colour="4294967295" rotation="0"/>
+    <instance objName="obj_door_dummy" x="416" y="32" name="inst_B8E93D93" locked="0" code="" scaleX="0.384615391492844" scaleY="0.307692319154739" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

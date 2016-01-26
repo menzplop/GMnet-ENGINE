@@ -85,6 +85,8 @@ mp_stayAlive();
 mp_add("time","time",buffer_u16,20*room_speed);
 mp_setType("time",mp_type.SMART);
 
+if htme_isLocal() show_debug_message("mp_sync END on LOCAL") else show_debug_message("mp_sync END on REMOTE")
+
 self.time = 1000;
 </string>
           </argument>

@@ -37,7 +37,7 @@ with (other) {isLocal = htme_isLocal();}
 
 if (isLocal &amp;&amp; keyboard_check_pressed(vk_up)) {
     var dest = htme_rom_demo2;
-    if (room == htme_rom_demo2) dest = htme_rom_demo;
+    if (room == htme_rom_demo2) dest = htme_rom_demo_start;
     room_goto(dest);
 }
 </string>
