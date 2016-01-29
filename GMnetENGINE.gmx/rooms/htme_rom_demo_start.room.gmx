@@ -60,17 +60,11 @@
     <instance objName="htme_obj_wall" x="544" y="576" name="inst_BFC13B47" locked="0" code="" scaleX="2" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="htme_obj_wall" x="240" y="288" name="inst_7604D694" locked="0" code="" scaleX="8" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="htme_obj_player" x="128" y="656" name="inst_75CFA756" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="htme_obj_network_control" x="112" y="608" name="inst_2A58F63A" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
     <instance objName="htme_obj_door" x="512" y="640" name="inst_D646664A" locked="0" code="" scaleX="0.15384615957737" scaleY="0.15384615957737" colour="4294967295" rotation="0"/>
-    <instance objName="htme_obj_playerlist" x="128" y="608" name="inst_62D25891" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="htme_obj_time" x="144" y="608" name="inst_A904F582" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="htme_obj_chat" x="160" y="608" name="inst_6D68765E" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_htme_rpc" x="-96" y="16" name="inst_78987891" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gotoRoom" x="96" y="48" name="inst_A721E3A9" locked="0" code="" scaleX="0.384615391492844" scaleY="0.307692319154739" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gotoRoom" x="208" y="64" name="inst_5F9FCC93" locked="0" code="" scaleX="0.538461565971375" scaleY="0.307692319154739" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gotoRoom" x="352" y="80" name="inst_3365D9E1" locked="0" code="" scaleX="0.461538463830948" scaleY="0.230769231915474" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gotoRoom" x="480" y="48" name="inst_935D973F" locked="0" code="" scaleX="0.461538463830948" scaleY="0.384615391492844" colour="4294967295" rotation="0"/>
-    <instance objName="obj_gotoRoom" x="608" y="64" name="inst_F9AE2D62" locked="0" code="" scaleX="0.384615391492844" scaleY="0.307692319154739" colour="4294967295" rotation="0"/>
+    <instance objName="htme_obj_network_control" x="96" y="624" name="inst_D09107B3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="htme_obj_playerlist" x="112" y="624" name="inst_39011B9D" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="htme_obj_time" x="128" y="624" name="inst_B0463FD3" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
+    <instance objName="htme_obj_chat" x="144" y="624" name="inst_0F39576B" locked="0" code="" scaleX="1" scaleY="1" colour="4294967295" rotation="0"/>
   </instances>
   <tiles/>
   <PhysicsWorld>0</PhysicsWorld>

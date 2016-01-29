@@ -30,6 +30,7 @@
   * Starts syncing.
   * Everything in this script MUST only be run in the create event and at the very beginning.
   */
+show_debug_message("obj_door_dummy");
 mp_sync();
 /**
  * Tell the engine to add the position:

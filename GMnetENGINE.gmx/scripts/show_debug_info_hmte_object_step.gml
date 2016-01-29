@@ -1,6 +1,6 @@
 /// show_debug_info_hmte_object_step();
-//CheckType="maps_lists";
-CheckType="priority_queue";
+CheckType="maps_lists";
+//CheckType="priority_queue";
 if mouse_check_button_pressed(mb_left)
 {
     var countlist=0;

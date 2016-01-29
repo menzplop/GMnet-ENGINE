@@ -43,7 +43,7 @@ if (in_ip == global.udphp_master) {
                 exit;
             }
             udphp_handleerror(udphp_dbglvl.DEBUG, udphp_dbgtarget.MAIN, 0, json);
-            global.udphp_downloadlist_topmap = json_decode(json);
+            global.udphp_downloadlist_topmap = json_decode(json);            
             global.udphp_downloadlist =  global.udphp_downloadlist_topmap[? "default"];
             udphp_handleerror(udphp_dbglvl.DEBUG, udphp_dbgtarget.MAIN, 0, "Downloader: Got lobby data.");
         break;

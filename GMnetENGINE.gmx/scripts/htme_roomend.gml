@@ -38,7 +38,7 @@ show_map(mapToUse,"htme_roomend",36);
 ds_map_copy(mapToUse,self.globalInstances);
 
 var insthash=ds_map_find_first(mapToUse);
-
+show_debug_message("All global instances size: " + string(ds_map_size(mapToUse)));
 //This will loop through all global instances
 for(var i=0; i<ds_map_size(mapToUse); i+=1) {
     var instid = ds_map_find_value(mapToUse,insthash);

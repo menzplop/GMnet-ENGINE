@@ -8,7 +8,7 @@
   <parentName>&lt;undefined&gt;</parentName>
   <maskName>&lt;undefined&gt;</maskName>
   <events>
-    <event eventtype="0" enumb="0">
+    <event eventtype="7" enumb="2">
       <action>
         <libid>1</libid>
         <id>603</id>
@@ -35,10 +35,10 @@ if (parameter_count() == 3) {
     // &lt;primary instance&gt;
     window_set_caption("P1")
     
-    testmore=true;
+    testmore=false;
     if testmore
     {
-        for (i=0; i&lt;10; i+=1)
+        for (i=0; i&lt;1; i+=1)
         {
             shell_execute(parameter_string(0),
                 parameter_string(1) + " " + '"' +

@@ -41,10 +41,10 @@ if (isLocal) {
     show_map(self.htme_mp_vars_recv,"mp_sync",40);
     self.htme_mp_vars_sync = ds_map_create();
     show_map(self.htme_mp_vars_sync,"mp_sync",42);
-    
     self.htme_mp_stayAlive = false;
     self.htme_mp_player = global.htme_object.playerhash;
     ds_map_add(global.htme_object.localInstances,self.htme_mp_id,self.id);
+    show_debug_message("Added to local list. Now size:" + string(ds_map_size(global.htme_object.localInstances)));
     ds_map_add(global.htme_object.globalInstances,self.htme_mp_id,self.id);
     var v_id =self.id;
     var v_object = self.htme_mp_object;

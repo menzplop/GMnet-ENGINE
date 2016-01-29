@@ -31,7 +31,7 @@ self.gmversionpick=3;
  * More Information can be found in the manual.
  */
  
-self.use_udphp = false;
+self.use_udphp = true;
 
 /** 
  * WHEN USING GMnet PUNCH:
@@ -40,7 +40,7 @@ self.use_udphp = false;
  * Use 95.85.63.183 if you have no server. It is only for debugging!
  * @type string
  */
-self.udphp_master_ip = "95.85.63.183";
+self.udphp_master_ip = "178.62.110.44";
 
 /** 
  * WHEN USING GMnet PUNCH:

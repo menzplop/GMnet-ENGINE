@@ -21,7 +21,6 @@ if (self.isServer) {
     exit;
 }
 
-
 htme_debugger("htme_clientDisconnect",htme_debug.INFO,"Disconnecting on request.");
 buffer_seek(self.buffer, buffer_seek_start, 0);
 buffer_write(self.buffer, buffer_s8, htme_packet.CLIENT_BYE);
