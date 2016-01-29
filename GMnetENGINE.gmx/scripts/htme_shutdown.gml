@@ -33,6 +33,8 @@ for(var i=0; i<ds_map_size(self.localInstances); i+=1) {
         if wasServer 
             htme_serverRemoveBackup(key);
         with inst_id {instance_destroy();}
+    } else if wasServer {
+        htme_serverRemoveBackup(key);
     }
     key = ds_map_find_next(self.localInstances, key);
 }
@@ -44,6 +46,8 @@ for(var i=0; i<ds_map_size(self.globalInstances); i+=1) {
         if wasServer
             htme_serverRemoveBackup(key);        
         with inst_id {instance_destroy();}
+    } else if wasServer {
+        htme_serverRemoveBackup(key);
     }
     key = ds_map_find_next(self.globalInstances, key);
 }
@@ -56,8 +60,8 @@ self.socketOrServer = -1;
 self.server_ip = "";
 self.playerhash = "";
 self.server_port = 0;
-if (ds_exists(self.udphp_playerlist, ds_type_map)) {ds_map_destroy(self.udphp_playerlist);show_map_destroy(self.udphp_playerlist,"htme_shutdown",59);}
-if (ds_exists(self.playermap, ds_type_map)) {ds_map_destroy(self.playermap);show_map_destroy(self.udphp_playerlist,"htme_shutdown",60);}
+if (ds_exists(self.udphp_playerlist, ds_type_list)) {ds_list_destroy(self.udphp_playerlist);show_list_destroy(self.udphp_playerlist,"htme_shutdown",59);}
+if (ds_exists(self.playermap, ds_type_map)) {ds_map_destroy(self.playermap);show_map_destroy(self.playermap,"htme_shutdown",60);}
 if (ds_exists(self.kickmap, ds_type_map)) {ds_map_destroy(self.kickmap);show_map_destroy(self.kickmap,"htme_shutdown",61);}
 if (ds_exists(self.playerrooms, ds_type_map)) {ds_map_destroy(self.playerrooms);show_map_destroy(self.playerrooms,"htme_shutdown",62);}
 if (ds_exists(self.playerlist, ds_type_list)) {ds_list_destroy(self.playerlist);show_list_destroy(self.playerlist,"htme_shutdown",63);}
@@ -70,15 +74,28 @@ if (ds_exists(self.serverTimeoutRecv, ds_type_map)) {ds_map_destroy(self.serverT
 if (ds_exists(self.signedPacketsCategories, ds_type_map)) {ds_map_destroy(self.signedPacketsCategories);show_map_destroy(self.signedPacketsCategories,"htme_shutdown",70);}
 if (ds_exists(self.serverBackup, ds_type_map)) {ds_map_destroy(self.serverBackup);show_map_destroy(self.serverBackup,"htme_shutdown",71);}
 if (ds_exists(self.signedPackets, ds_type_list)) {ds_list_destroy(self.signedPackets);show_list_destroy(self.signedPackets,"htme_shutdown",72);}
+if (ds_exists(self.lanlobby, ds_type_list)) {
+    // Clean list from ds maps
+    for (var i=0; i<ds_list_size(self.lanlobby); i+=1)
+    {
+        if ds_exists(self.lanlobby[| i],ds_type_map) {
+            ds_map_destroy(self.lanlobby[| i]);
+            show_map_destroy(self.lanlobby[| i],"htme_shutdown",78);
+        }
+    }
+    ds_list_destroy(self.lanlobby);
+    show_list_destroy(self.lanlobby,"htme_shutdown",73);
+}
+
 htme_clean_signed_packets("");
 ds_map_destroy(self.sPcountOUT);
 show_map_destroy(self.sPcountOUT,"htme_shutdown",74);
-self.sPcountOUT = ds_map_create();
-show_map(self.sPcountOUT,"htme_shutdown",76);
+self.sPcountOUT=ds_map_create();
+show_map(self.sPcountOUT,"htme_shutdown",80);
 ds_map_destroy(self.sPcountIN);
 show_map_destroy(self.sPcountIN,"htme_shutdown",78);
-self.sPcountIN = ds_map_create();
-show_map(self.sPcountIN,"htme_shutdown",80);
+self.sPcountIN=ds_map_create();
+show_map(self.sPcountIN,"htme_shutdown",84);
 if (ds_exists(self.chatQueues,ds_type_map)) {
     key = ds_map_find_first(self.chatQueues);
     for(var i=0; i<ds_map_size(self.chatQueues); i+=1) {

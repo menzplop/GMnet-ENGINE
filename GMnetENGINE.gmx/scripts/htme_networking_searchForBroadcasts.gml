@@ -55,6 +55,11 @@ with (global.htme_object) {
             for (var i = 0;i<ds_list_size(serverlist);i++) {
                 var valmap = ds_list_find_value(serverlist,i)
                 if (valmap[? "ip"] == map[? "ip"]) {
+                    // remove old map
+                    if ds_exists(serverlist[| i],ds_type_map) {
+                        ds_map_destroy(serverlist[| i]);
+                        show_map_destroy(serverlist[| i],"htme_networking_searchForBroadcasts",60);
+                    }
                     ds_list_replace(serverlist,i,map);
                     exit;
                 }

@@ -23,6 +23,23 @@ if (global.udphp_server_counter == -1) {
     exit;
 }
 
+// Clean others
+if ds_exists(global.udphp_downloadlist_topmap,ds_type_map) {
+    ds_map_destroy(global.udphp_downloadlist_topmap);
+    show_map_destroy(global.udphp_downloadlist_topmap,"udphp_stopClient",33);
+    global.udphp_downloadlist_topmap=-1;
+}
+if ds_exists(global.udphp_downloadlist,ds_type_list) {
+    ds_list_destroy(global.udphp_downloadlist);
+    show_list_destroy(global.udphp_downloadlist,"udphp_stopClient",37);
+    global.udphp_downloadlist=-1;
+}
+if ds_exists(global.udphp_clients,ds_type_map) {
+    ds_map_destroy(global.udphp_clients);
+    show_list_destroy(global.udphp_downloadlist,"udphp_stopClient",41);
+    global.udphp_clients=-1;
+}
+
 network_destroy(global.udphp_server_udp);
 global.udphp_server_udp = -1;
 network_destroy(global.udphp_server_tcp);
