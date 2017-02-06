@@ -297,6 +297,8 @@ if (ds_exists(l,ds_type_list)) {
         var ip = entry[? "ip"];
         var port = entry[? "port"];
         var game = entry[? "data1"];
+        var the_server_port = entry[? "data4"];
+        global.ConnectToServerPort=real(the_server_port);        
         if (game != self.game) {
            //Not compatible game, exit
            htme_error_message_handler("Game server or version is incompatible!");
@@ -344,6 +346,8 @@ if (ds_exists(l,ds_type_list)) {
         var ip = entry[? "ip"];
         var port = entry[? "port"];
         var game = entry[? "data1"];
+        var the_server_port = entry[? "data4"];
+        global.ConnectToServerPort=real(the_server_port);        
         if (game != self.game) {
            //Not compatible game, exit
            htme_error_message_handler("Game server or version is incompatible!");
@@ -391,6 +395,8 @@ if (ds_exists(l,ds_type_list)) {
         var ip = entry[? "ip"];
         var port = entry[? "port"];
         var game = entry[? "data1"];
+        var the_server_port = entry[? "data4"];
+        global.ConnectToServerPort=real(the_server_port);        
         if (game != self.game) {
            //Not compatible game, exit
            htme_error_message_handler("Game server or version is incompatible!");
@@ -438,6 +444,8 @@ if (ds_exists(l,ds_type_list)) {
         var ip = entry[? "ip"];
         var port = entry[? "port"];
         var game = entry[? "data1"];
+        var the_server_port = entry[? "data4"];
+        global.ConnectToServerPort=real(the_server_port);
         if (game != self.game) {
            //Not compatible game, exit
            htme_error_message_handler("Game server or version is incompatible!");
